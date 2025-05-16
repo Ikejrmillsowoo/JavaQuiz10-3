@@ -27,20 +27,27 @@ public class StringEvaluator {
         Set<String> set = new HashSet<>();
         for (int i = 0; i < str1.length; i++) {
             for (int j = 0; j < str2.length; j++) {
-                if equals(str2[j])){
+                if (str2[j].equals(str1[i])){
                     set.add(str1[i]);
                 }
             };
 
         }
 
-
-
-
-
+            return set.toArray(new  String[0]);
     }
 
     public static String getLargestCommonSubstring(String string1, String string2) {
-        return null;
+        String[] res = getCommonSubstrings(string1, string2);
+        int max = 0;
+        String current = "";
+        for (String s: res ){
+            if (s.length() > max){
+                current = s;
+                max = s.length();
+            }
+        }
+
+        return current;
     }
 }
