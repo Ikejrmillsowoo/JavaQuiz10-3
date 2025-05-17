@@ -14,15 +14,17 @@ public class PalindromeObject {
     }
 
     public String[] getAllPalindromes(){
-        String[] arr = string.split("");
+        String[] arr = this.input.split("");
         Set<String> newArr = new HashSet<>();
         for (int i = 0; i < arr.length; i++) {
             for (int j = i; j < arr.length; j++) {
-                if (isPalin(string.substring(i,j+1))) {
-                    newArr.add(string.substring(i,j+1));
+                StringBuilder newStr = new StringBuilder(this.input.substring(i, j + 1));
+                if (newStr.toString().equals(newStr.reverse().toString())) {
+                    newArr.add(newStr.toString());
                 }
             }
-        return null;
+        }
+        return newArr.toArray(new String[0]);
     }
 
     public Boolean isPalindrome(){
