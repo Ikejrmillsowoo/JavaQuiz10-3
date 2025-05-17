@@ -48,6 +48,15 @@ public class StringEvaluatorObject {
     }
 
     public String getLargestCommonSubstring(String secondInput) {
-        return null;
+        String[] ans = getCommonSubstrings(secondInput);
+        int max = 0;
+        String string = "";
+        for (String s: ans){
+            if (s.length()> max){
+                max = s.length();
+                string = s;
+            }
+        }
+        return string;
     }
 }
